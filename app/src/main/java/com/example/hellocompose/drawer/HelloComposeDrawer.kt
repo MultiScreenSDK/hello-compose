@@ -16,10 +16,12 @@ import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.example.hellocompose.screen.SimpleTextScreen
 import com.example.hellocompose.screen.StyledTextScreen
+import com.example.hellocompose.screen.VerticalScrollableListScreen
 
 enum class HelloComposeScreen {
     SimpleTextScreen,
-    StyledTextScreen
+    StyledTextScreen,
+    VerticalScrollableListScreen,
 }
 
 @Composable
@@ -75,16 +77,11 @@ fun BodyContentComponent(
     openDrawer: () -> Unit
 ) {
     when (currentScreen) {
-        HelloComposeScreen.SimpleTextScreen -> SimpleTextScreen(
-            openDrawer
-        )
-        HelloComposeScreen.StyledTextScreen -> StyledTextScreen(
-            openDrawer
-        )
-        else -> throw IllegalArgumentException("Wrong Screen")
+        HelloComposeScreen.SimpleTextScreen -> SimpleTextScreen(openDrawer)
+        HelloComposeScreen.StyledTextScreen -> StyledTextScreen(openDrawer)
+        HelloComposeScreen.VerticalScrollableListScreen -> VerticalScrollableListScreen(openDrawer)
     }
 }
-
 
 @Preview
 @Composable
