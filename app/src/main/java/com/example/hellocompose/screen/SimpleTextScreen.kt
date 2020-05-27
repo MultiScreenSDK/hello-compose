@@ -11,18 +11,22 @@ import androidx.ui.layout.fillMaxSize
 import androidx.ui.material.Surface
 import androidx.ui.text.TextStyle
 import androidx.ui.text.font.FontWeight
+import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.sp
 
 @Composable
 fun SimpleTextScreen(openDrawer: () -> Unit) {
     ScreenComponent("SimpleTextScreen", openDrawer) {
         Surface(color = Color(0xFFffffff.toInt()), modifier = Modifier.weight(1f)) {
-            Box(modifier = Modifier.fillMaxSize(), gravity = ContentGravity.Center, children = {
-                Text(
-                    text = "Hello Jetpack Compose!!",
-                    style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold)
-                )
-            })
+            Box(modifier = Modifier.fillMaxSize(), gravity = ContentGravity.Center) {
+                Text(text = "Hello Jetpack Compose!!")
+            }
         }
     }
+}
+
+@Preview
+@Composable
+fun PreviewSimpleTextScreen() {
+    SimpleTextScreen(openDrawer = {})
 }
