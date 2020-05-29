@@ -14,6 +14,7 @@ import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Surface
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
+import com.example.hellocompose.screen.HorizontalScrollableListScreen
 import com.example.hellocompose.screen.SimpleTextScreen
 import com.example.hellocompose.screen.StyledTextScreen
 import com.example.hellocompose.screen.VerticalScrollableListScreen
@@ -22,6 +23,7 @@ enum class HelloComposeScreen {
     SimpleTextScreen,
     StyledTextScreen,
     VerticalScrollableListScreen,
+    HorizontalScrollableListScreen,
 }
 
 @Composable
@@ -80,6 +82,7 @@ fun BodyContentComponent(
         HelloComposeScreen.SimpleTextScreen -> SimpleTextScreen(openDrawer)
         HelloComposeScreen.StyledTextScreen -> StyledTextScreen(openDrawer)
         HelloComposeScreen.VerticalScrollableListScreen -> VerticalScrollableListScreen(openDrawer)
+        HelloComposeScreen.HorizontalScrollableListScreen -> HorizontalScrollableListScreen(openDrawer)
     }
 }
 

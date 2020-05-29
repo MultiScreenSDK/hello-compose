@@ -30,10 +30,10 @@ fun VerticalScrollableListScreen(openDrawer: () -> Unit) {
 fun VerticalScrollableListComponent(personList: List<Person>) {
     AdapterList(data = personList) { person ->
         val index = personList.indexOf(person)
-        Row(modifier = Modifier.padding(16.dp) + Modifier.fillMaxWidth()) {
+        Row(modifier = Modifier.fillMaxWidth()) {
             Card(
                 shape = RoundedCornerShape(10.dp), color = colors[index % colors.size],
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth() + Modifier.padding(16.dp)
             ) {
                 Text(
                     person.name,
