@@ -12,13 +12,12 @@ import androidx.ui.graphics.Color
 import androidx.ui.layout.*
 import androidx.ui.material.Card
 import androidx.ui.text.TextStyle
-import androidx.ui.text.font.FontFamily
-import androidx.ui.text.font.FontWeight
 import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import androidx.ui.unit.sp
 import com.example.hellocompose.data.Person
 import com.example.hellocompose.data.getPersonList
+import com.example.hellocompose.screen.widgets.TitleComponent
 
 @Composable
 fun HorizontalScrollableListScreen(openDrawer: () -> Unit) {
@@ -31,17 +30,6 @@ fun HorizontalScrollableListScreen(openDrawer: () -> Unit) {
         }
 
     }
-}
-
-@Composable
-fun TitleComponent(title: String) {
-    Text(
-        title, style = TextStyle(
-            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.W900,
-            fontSize = 14.sp, color = Color.Black
-        ), modifier = Modifier.padding(16.dp) +
-                Modifier.fillMaxWidth()
-    )
 }
 
 @Composable
