@@ -81,6 +81,7 @@ fun BodyContentComponent(
         HelloComposeScreen.ViewLayoutScreen -> ViewLayoutScreen(openDrawer)
         HelloComposeScreen.MaterialScreen -> MaterialScreen(openDrawer)
         HelloComposeScreen.FloatingActionButtonScreen -> FloatingActionButtonScreen(openDrawer)
+        HelloComposeScreen.AnimationScreen -> AnimationScreen(openDrawer)
     }
 }
 
@@ -96,7 +97,8 @@ enum class HelloComposeScreen {
     TextFieldsScreen,
     ViewLayoutScreen,
     MaterialScreen,
-    FloatingActionButtonScreen
+    FloatingActionButtonScreen,
+    AnimationScreen
 }
 
 @Preview
