@@ -16,20 +16,6 @@ import androidx.ui.tooling.preview.Preview
 import androidx.ui.unit.dp
 import com.example.hellocompose.screen.*
 
-enum class HelloComposeScreen {
-    SimpleTextScreen,
-    StyledTextScreen,
-    VerticalScrollableListScreen,
-    HorizontalScrollableListScreen,
-    ImageListScreen,
-    AlertDialogScreen,
-    ButtonsScreen,
-    StateManagementScreen,
-    TextFieldsScreen,
-    ViewLayoutScreen,
-    MaterialScreen
-}
-
 @Composable
 fun DrawerContentComponent(
     currentScreen: MutableState<HelloComposeScreen>,
@@ -94,7 +80,23 @@ fun BodyContentComponent(
         HelloComposeScreen.TextFieldsScreen -> TextFieldsScreen(openDrawer)
         HelloComposeScreen.ViewLayoutScreen -> ViewLayoutScreen(openDrawer)
         HelloComposeScreen.MaterialScreen -> MaterialScreen(openDrawer)
+        HelloComposeScreen.FloatingActionButtonScreen -> FloatingActionButtonScreen(openDrawer)
     }
+}
+
+enum class HelloComposeScreen {
+    SimpleTextScreen,
+    StyledTextScreen,
+    VerticalScrollableListScreen,
+    HorizontalScrollableListScreen,
+    ImageListScreen,
+    AlertDialogScreen,
+    ButtonsScreen,
+    StateManagementScreen,
+    TextFieldsScreen,
+    ViewLayoutScreen,
+    MaterialScreen,
+    FloatingActionButtonScreen
 }
 
 @Preview
