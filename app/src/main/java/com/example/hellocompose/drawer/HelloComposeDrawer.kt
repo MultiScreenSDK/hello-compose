@@ -23,7 +23,8 @@ enum class HelloComposeScreen {
     HorizontalScrollableListScreen,
     ImageListScreen,
     AlertDialogScreen,
-    ButtonsScreen
+    ButtonsScreen,
+    StateManagementScreen
 }
 
 @Composable
@@ -86,6 +87,7 @@ fun BodyContentComponent(
         HelloComposeScreen.ImageListScreen -> ImageListScreen(openDrawer)
         HelloComposeScreen.AlertDialogScreen -> AlertDialogScreen(openDrawer)
         HelloComposeScreen.ButtonsScreen -> ButtonsScreen(openDrawer)
+        HelloComposeScreen.StateManagementScreen -> StateManagementScreen(openDrawer)
     }
 }
 
