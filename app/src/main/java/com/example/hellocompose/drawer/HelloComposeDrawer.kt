@@ -21,7 +21,8 @@ enum class HelloComposeScreen {
     StyledTextScreen,
     VerticalScrollableListScreen,
     HorizontalScrollableListScreen,
-    ImageListScreen
+    ImageListScreen,
+    AlertDialogScreen
 }
 
 @Composable
@@ -82,6 +83,7 @@ fun BodyContentComponent(
         HelloComposeScreen.VerticalScrollableListScreen -> VerticalScrollableListScreen(openDrawer)
         HelloComposeScreen.HorizontalScrollableListScreen -> HorizontalScrollableListScreen(openDrawer)
         HelloComposeScreen.ImageListScreen -> ImageListScreen(openDrawer)
+        HelloComposeScreen.AlertDialogScreen -> AlertDialogScreen(openDrawer)
     }
 }
 
