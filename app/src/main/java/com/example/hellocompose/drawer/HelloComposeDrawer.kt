@@ -6,6 +6,7 @@ import androidx.compose.mutableStateOf
 import androidx.ui.core.Modifier
 import androidx.ui.foundation.Clickable
 import androidx.ui.foundation.Text
+import androidx.ui.foundation.VerticalScroller
 import androidx.ui.layout.Column
 import androidx.ui.layout.fillMaxSize
 import androidx.ui.layout.fillMaxWidth
@@ -21,13 +22,15 @@ fun DrawerContentComponent(
     currentScreen: MutableState<HelloComposeScreen>,
     closeDrawer: () -> Unit
 ) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        HelloComposeScreen.values().forEach {
-            DrawerContentItemComponent(
-                currentScreen,
-                it,
-                closeDrawer
-            )
+    VerticalScroller {
+        Column(modifier = Modifier.fillMaxSize()) {
+            HelloComposeScreen.values().forEach {
+                DrawerContentItemComponent(
+                    currentScreen,
+                    it,
+                    closeDrawer
+                )
+            }
         }
     }
 }
@@ -72,7 +75,9 @@ fun BodyContentComponent(
         HelloComposeScreen.SimpleTextScreen -> SimpleTextScreen(openDrawer)
         HelloComposeScreen.StyledTextScreen -> StyledTextScreen(openDrawer)
         HelloComposeScreen.VerticalScrollableListScreen -> VerticalScrollableListScreen(openDrawer)
-        HelloComposeScreen.HorizontalScrollableListScreen -> HorizontalScrollableListScreen(openDrawer)
+        HelloComposeScreen.HorizontalScrollableListScreen -> HorizontalScrollableListScreen(
+            openDrawer
+        )
         HelloComposeScreen.ImageListScreen -> ImageListScreen(openDrawer)
         HelloComposeScreen.AlertDialogScreen -> AlertDialogScreen(openDrawer)
         HelloComposeScreen.ButtonsScreen -> ButtonsScreen(openDrawer)
@@ -82,6 +87,7 @@ fun BodyContentComponent(
         HelloComposeScreen.MaterialScreen -> MaterialScreen(openDrawer)
         HelloComposeScreen.FloatingActionButtonScreen -> FloatingActionButtonScreen(openDrawer)
         HelloComposeScreen.AnimationScreen -> AnimationScreen(openDrawer)
+        HelloComposeScreen.LiveDataScreen -> LiveDataScreen(openDrawer)
     }
 }
 
@@ -98,7 +104,8 @@ enum class HelloComposeScreen {
     ViewLayoutScreen,
     MaterialScreen,
     FloatingActionButtonScreen,
-    AnimationScreen
+    AnimationScreen,
+    LiveDataScreen
 }
 
 @Preview

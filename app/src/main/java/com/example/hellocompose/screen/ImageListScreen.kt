@@ -37,7 +37,7 @@ fun ImageListScreen(openDrawer: () -> Unit) {
                 LocalImageWithRoundedCornersComponent(resId = R.drawable.lenna, size = 10.dp)
 
                 TitleComponent("Load image from url using Glide")
-                NetworkImageComponent()
+                NetworkImageComponent("https://github.com/vinaygaba/CreditCardView/raw/master/images/Feature%20Image.png")
             }
         }
     }
@@ -64,9 +64,10 @@ fun LocalImageWithRoundedCornersComponent(@DrawableRes resId: Int, size: Dp) {
 }
 
 @Composable
-fun NetworkImageComponent() {
-    val url = "https://github.com/vinaygaba/CreditCardView/raw/master/images/Feature%20Image.png"
-
+fun NetworkImageComponent(
+    url: String,
+    modifier: Modifier = Modifier.preferredWidth(200.dp) + Modifier.preferredHeight(200.dp)
+) {
     var image by state<ImageAsset?> { null }
     val context = ContextAmbient.current
 
@@ -97,7 +98,7 @@ fun NetworkImageComponent() {
     if (theImage != null) {
         Image(
             asset = theImage,
-            modifier = Modifier.preferredWidth(200.dp) + Modifier.preferredHeight(200.dp)
+            modifier = modifier
         )
     }
 }
@@ -117,5 +118,5 @@ fun PreviewImageWithRoundedCorners() {
 @Preview
 @Composable
 fun PreviewNetworkImageWithGlide() {
-    NetworkImageComponent()
+    NetworkImageComponent("https://github.com/vinaygaba/CreditCardView/raw/master/images/Feature%20Image.png")
 }
